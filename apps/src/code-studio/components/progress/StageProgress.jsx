@@ -5,6 +5,7 @@ import _ from 'lodash';
 import { stageProgressShape } from './types';
 import StatusProgressDot from './StatusProgressDot.jsx';
 import color from "../../../util/color";
+import StageExtrasProgressDot from './StageExtrasProgressDot';
 
 const styles = {
   courseOverviewContainer: {
@@ -43,6 +44,7 @@ const StageProgress = React.createClass({
     return (
       <div className="react_stage" style={this.props.courseOverviewPage ? styles.courseOverviewContainer : styles.headerContainer}>
         {progressDots}
+        {!this.props.courseOverviewPage && <StageExtrasProgressDot stageId={this.props.stageId} />}
       </div>
     );
   }
